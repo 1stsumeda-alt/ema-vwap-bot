@@ -25,6 +25,7 @@ def VWAP(df):
     tp = (df.high + df.low + df.close) / 3
     return (tp * df.volume).cumsum() / df.volume.cumsum()
 
+send("✅ Bot started successfully")
 while True:
     df = pd.DataFrame(
         exchange.fetch_ohlcv(SYMBOL, TIMEFRAME, limit=200),
